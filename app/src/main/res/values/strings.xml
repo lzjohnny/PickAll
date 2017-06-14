@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">采摘宝</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text">
+        关于Android Design Support Library
+
+​ 在Android 5.0 时出现了 Material Design 。瞬时感觉Android 更加牛B哄哄了，可是其它老版本的Android 怎么办呢？它们也行这么牛B哄哄，走到哪里都耀眼夺目。怎么办呢？Google很贴心的提供了Android Design Support Library，这样就可以支持 Android 2.1 以上的设备了。
+
+​ Android Design Support Library 其实就是一个AAR包，里面包含了navigation drawer view, TextInputEditText,FloatingActionButton, Snackbar, TabLayout, CoordinatorLayout 等。
+
+​ 今天我们介绍的是AppBarLayout这个控件。
+
+AppBarLayout
+
+​ AppBarLayout 继承自LinearLayout，子控件默认为竖直方向显示，可以用它实现Material Design 的Toolbar；它支持滑动手势；它的子控件可以通过在代码里调用setScrollFlags(int)或者在XML里app:layout_scrollFlags来设置它的滑动手势。当然实现这些的前提是它的根布局必须是 CoordinatorLayout。这里的滑动手势可以理解为：当某个可滚动View的滚动手势发生变化时，AppBarLayout内部的子View实现某种动作。
+
+​ AppBarLayout的子控件不仅仅可以设置为Toolbar，也可以包含其他的View。
+
+​ 下面我们具体来看看它的使用方法，我们先看以下的布局
+        关于Android Design Support Library
+
+​ 在Android 5.0 时出现了 Material Design 。瞬时感觉Android 更加牛B哄哄了，可是其它老版本的Android 怎么办呢？它们也行这么牛B哄哄，走到哪里都耀眼夺目。怎么办呢？Google很贴心的提供了Android Design Support Library，这样就可以支持 Android 2.1 以上的设备了。
+
+​ Android Design Support Library 其实就是一个AAR包，里面包含了navigation drawer view, TextInputEditText,FloatingActionButton, Snackbar, TabLayout, CoordinatorLayout 等。
+
+​ 今天我们介绍的是AppBarLayout这个控件。
+
+AppBarLayout
+
+​ AppBarLayout 继承自LinearLayout，子控件默认为竖直方向显示，可以用它实现Material Design 的Toolbar；它支持滑动手势；它的子控件可以通过在代码里调用setScrollFlags(int)或者在XML里app:layout_scrollFlags来设置它的滑动手势。当然实现这些的前提是它的根布局必须是 CoordinatorLayout。这里的滑动手势可以理解为：当某个可滚动View的滚动手势发生变化时，AppBarLayout内部的子View实现某种动作。
+
+​ AppBarLayout的子控件不仅仅可以设置为Toolbar，也可以包含其他的View。
+
+​ 下面我们具体来看看它的使用方法，我们先看以下的布局
+        关于Android Design Support Library
+
+​ 在Android 5.0 时出现了 Material Design 。瞬时感觉Android 更加牛B哄哄了，可是其它老版本的Android 怎么办呢？它们也行这么牛B哄哄，走到哪里都耀眼夺目。怎么办呢？Google很贴心的提供了Android Design Support Library，这样就可以支持 Android 2.1 以上的设备了。
+
+​ Android Design Support Library 其实就是一个AAR包，里面包含了navigation drawer view, TextInputEditText,FloatingActionButton, Snackbar, TabLayout, CoordinatorLayout 等。
+
+​ 今天我们介绍的是AppBarLayout这个控件。
+
+AppBarLayout
+
+​ AppBarLayout 继承自LinearLayout，子控件默认为竖直方向显示，可以用它实现Material Design 的Toolbar；它支持滑动手势；它的子控件可以通过在代码里调用setScrollFlags(int)或者在XML里app:layout_scrollFlags来设置它的滑动手势。当然实现这些的前提是它的根布局必须是 CoordinatorLayout。这里的滑动手势可以理解为：当某个可滚动View的滚动手势发生变化时，AppBarLayout内部的子View实现某种动作。
+
+​ AppBarLayout的子控件不仅仅可以设置为Toolbar，也可以包含其他的View。
+
+​ 下面我们具体来看看它的使用方法，我们先看以下的布局
+    </string>
+</resources>

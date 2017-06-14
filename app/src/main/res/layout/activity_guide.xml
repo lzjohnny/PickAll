@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/guide_view_pager">
+
+    </android.support.v4.view.ViewPager>
+
+    <cn.xidianedu.pickall.view.MyLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:id="@+id/guide_image_view"
+                android:src="@drawable/icon"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_guide_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#FFFFFF"
+                android:text="开始吧"
+                android:textSize="20sp"
+                android:background="#00BFFF" />
+            <Button
+                android:id="@+id/btn_guide_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_guide_start"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="#FFFFFF"
+                android:text="登录"
+                android:textSize="20sp"
+                android:background="#55D1D1D1" />
+
+            <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/indicator_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+
+    </cn.xidianedu.pickall.view.MyLinearLayout>
+
+
+</FrameLayout>
+
+<!--android:background="#00BFFF"-->
+<!--android:background="#55D1D1D1"-->

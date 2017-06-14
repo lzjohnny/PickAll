@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:text="主布局：更多"-->
+    <!--android:id="@+id/textView4" />-->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="更多"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20sp"/>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="#EAEEF4"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/user_card"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:background="?android:selectableItemBackground"
+            android:foreground="?android:selectableItemBackground"
+            app:cardElevation="1dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+                <ImageView
+                    android:id="@+id/user_icon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_add_black_24dp"/>
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="用户昵称"
+                    android:layout_toRightOf="@id/user_icon"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:id="@+id/user_introduction"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="个人简介"
+                    android:layout_toRightOf="@id/user_icon"
+                    android:layout_below="@id/user_name"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"/>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:cardElevation="1dp">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_choice_fragment_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:cardElevation="1dp">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv2_choice_fragment_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginTop="56dp"-->
+        <!--android:background="#EAEEF4">-->
+        <!---->
+    <!--</ScrollView>-->
+</android.support.design.widget.CoordinatorLayout>
+
+<!--去掉滚动条和滑动到边缘时效果-->
+<!--android:overScrollMode="never"-->
+<!--android:scrollbars="none"-->
+<!--cardView点击效果-->
+<!--android:foreground="?android:selectableItemBackground"-->

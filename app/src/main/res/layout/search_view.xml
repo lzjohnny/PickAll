@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="56dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_arraw_back_gray"
+            android:background="?android:selectableItemBackground"
+            android:onClick="back"
+            android:clickable="true"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:hint="搜索感兴趣的采摘园"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="#00000000"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:textSize="18sp"/>
+
+        <ImageView
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_search_gray"
+            android:background="?android:selectableItemBackground"
+            android:onClick="search"
+            android:clickable="true"/>
+    </LinearLayout>
+</LinearLayout>
+
+<!--android:background="#00000000"可以去掉EditText的下划线-->
+
+<!--android:imeOptions="actionSearch"键盘右下角显示搜索图标-->
+<!--android:singleLine="true"配合singleLine属性才生效-->
+<!--android:background="?android:selectableItemBackground" 非按钮点击时也能产生波纹效果-->

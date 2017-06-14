@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="隐私设置">
+        <SwitchPreference
+            android:key="pref_private_hide"
+            android:title="匿名模式"
+            android:defaultValue="false"
+            android:summaryOn="匿名模式开启，所有个人信息均被隐藏"
+            android:summaryOff="匿名模式关闭">
+        </SwitchPreference>
+        <SwitchPreference
+            android:key="pref_private_hide_signature"
+            android:title="隐藏个人简介"
+            android:defaultValue="false"
+            android:summaryOn="个人简介已隐藏"
+            android:summaryOff="个人简介未隐藏">
+        </SwitchPreference>
+        <SwitchPreference
+            android:key="pref_private_hide_grade"
+            android:title="隐藏我的关注"
+            android:defaultValue="false"
+            android:summaryOn="关注的采摘园已隐藏"
+            android:summaryOff="关注的采摘园未隐藏">
+        </SwitchPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="系统设置">
+        <SwitchPreference
+            android:key="pref_system_receive_msg"
+            android:title="是否接收消息"
+            android:defaultValue="false"
+            android:summaryOn="已接收消息推送"
+            android:summaryOff="不接收消息推送">
+        </SwitchPreference>
+        <Preference
+            android:key="pref_system_feedback"
+            android:title="意见反馈"
+            android:summary=" ">
+        </Preference>
+        <Preference
+            android:key="pref_system_clear_cache"
+            android:title="清除缓存"
+            android:summary="当前缓存：0 KB">
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

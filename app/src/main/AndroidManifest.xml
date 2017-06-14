@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.xidianedu.pickall">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+    <application
+        android:name="cn.xidianedu.pickall.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="LHCMCreOtgvOUO7ufPeLuCCfT2mqkKr3" />
+
+        <activity android:name="cn.xidianedu.pickall.activity.LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="cn.xidianedu.pickall.activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name="cn.xidianedu.pickall.activity.SearchActivity" />
+        <activity android:name="cn.xidianedu.pickall.activity.UserInfoActivity" />
+        <activity android:name="cn.xidianedu.pickall.activity.GuideActivity" />
+        <activity android:name="cn.xidianedu.pickall.activity.LoginActivity" />
+        <activity android:name="cn.xidianedu.pickall.activity.SettingActivity" />
+        <activity android:name="cn.xidianedu.pickall.activity.UserInfoEditActivity" />
+        <activity android:name="cn.xidianedu.pickall.activity.UploadPickPark"
+            android:label="信息分享"/>
+        <activity android:name="cn.xidianedu.pickall.activity.PickListActivity" />
+        <activity android:name="cn.xidianedu.pickall.activity.PickDetailActivity" />
+        <activity android:name="cn.xidianedu.pickall.activity.RecomListActivity" />
+        <activity android:name=".activity.CloudSearchActivity"/>
+
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+        </service>
+    </application>
+
+</manifest>
