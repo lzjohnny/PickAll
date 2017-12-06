@@ -1,12 +1,11 @@
 package cn.xidianedu.pickall.bean;
 
-import cn.bmob.v3.BmobObject;
 
 /**
  * Created by ShiningForever on 2017/5/6.
  */
 
-public class PickParkBean extends BmobObject {
+public class PickParkBean {
     private String title;
     private float price;
     private String location;

@@ -13,12 +13,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
 import java.util.List;
-
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.FindListener;
 import cn.xidianedu.pickall.R;
 import cn.xidianedu.pickall.activity.SearchActivity;
 import cn.xidianedu.pickall.adapter.DividerItemDecoration;
@@ -83,37 +78,37 @@ public class MainFragment1 extends Fragment implements View.OnClickListener {
     }
 
     public void getMainHeadData() {
-        BmobQuery<MainHeadData> query = new BmobQuery<>();
-        query.addWhereEqualTo("usage", "main_head");
-        query.order("order");
-        query.findObjects(new FindListener<MainHeadData>() {
-            @Override
-            public void done(List<MainHeadData> list, BmobException e) {
-                refresh.setRefreshing(false);
-                if (e == null) {
-                    adapter.addHeadSrc(list);
-                    adapter.notifyDataSetChanged();
-                } else {
-                    Toast.makeText(mContext, "图片加载失败" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        BmobQuery<MainHeadData> query = new BmobQuery<>();
+//        query.addWhereEqualTo("usage", "main_head");
+//        query.order("order");
+//        query.findObjects(new FindListener<MainHeadData>() {
+//            @Override
+//            public void done(List<MainHeadData> list, BmobException e) {
+//                refresh.setRefreshing(false);
+//                if (e == null) {
+//                    adapter.addHeadSrc(list);
+//                    adapter.notifyDataSetChanged();
+//                } else {
+//                    Toast.makeText(mContext, "图片加载失败" + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
     }
 
     public void getMainListData() {
-        BmobQuery<PickParkBean> query = new BmobQuery<>();
-        query.addWhereEqualTo("usage", "main_list");
-        query.findObjects(new FindListener<PickParkBean>() {
-            @Override
-            public void done(List<PickParkBean> list, BmobException e) {
-                if (e == null) {
-                    adapter.addListSrc(list);
-                    adapter.notifyDataSetChanged();
-                } else {
-                    Toast.makeText(mContext, "列表加载失败" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        BmobQuery<PickParkBean> query = new BmobQuery<>();
+//        query.addWhereEqualTo("usage", "main_list");
+//        query.findObjects(new FindListener<PickParkBean>() {
+//            @Override
+//            public void done(List<PickParkBean> list, BmobException e) {
+//                if (e == null) {
+//                    adapter.addListSrc(list);
+//                    adapter.notifyDataSetChanged();
+//                } else {
+//                    Toast.makeText(mContext, "列表加载失败" + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
     }
 
     @Override

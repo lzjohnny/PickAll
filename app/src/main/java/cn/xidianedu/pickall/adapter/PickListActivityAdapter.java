@@ -38,9 +38,9 @@ public class PickListActivityAdapter extends RecyclerView.Adapter<RecyclerView.V
             @Override
             public void onClick(View v) {
 //                Log.d("------posi", holder.getAdapterPosition() + "");
-                String oid = beanList.get(holder.getAdapterPosition()).getObjectId();
+//                String oid = beanList.get(holder.getAdapterPosition()).getObjectId();
                 Intent itemIntent = new Intent(context, PickDetailActivity.class);
-                itemIntent.putExtra("oid", oid);
+//                itemIntent.putExtra("oid", oid);
                 context.startActivity(itemIntent);
             }
         });

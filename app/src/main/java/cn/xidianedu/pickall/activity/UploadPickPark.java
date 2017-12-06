@@ -14,8 +14,6 @@ import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SaveListener;
 import cn.xidianedu.pickall.R;
 import cn.xidianedu.pickall.bean.PickParkBean;
 
@@ -100,17 +98,17 @@ public class UploadPickPark extends AppCompatActivity implements AdapterView.OnI
                 bean.setLabel(labelStr);
                 bean.setUsage(USAGE);
                 bean.setRatingCount(1);
-                bean.save(new SaveListener<String>() {
-                    @Override
-                    public void done(String s, BmobException e) {
-                        if (e == null) {
-                            Toast.makeText(UploadPickPark.this, "提交成功", Toast.LENGTH_SHORT).show();
-                            finish();
-                        } else {
-                            Toast.makeText(UploadPickPark.this, "提交失败，请重试", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+//                bean.save(new SaveListener<String>() {
+//                    @Override
+//                    public void done(String s, BmobException e) {
+//                        if (e == null) {
+//                            Toast.makeText(UploadPickPark.this, "提交成功", Toast.LENGTH_SHORT).show();
+//                            finish();
+//                        } else {
+//                            Toast.makeText(UploadPickPark.this, "提交失败，请重试", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
                 break;
         }
         return true;

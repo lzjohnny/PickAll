@@ -17,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jude.rollviewpager.RollPagerView;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -110,7 +109,7 @@ public class MainFrag1RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
                         int position = holderList.getAdapterPosition();
                         Log.d("-----posi---", position + "");
                         Intent intent = new Intent(mContext, PickDetailActivity.class);
-                        intent.putExtra("oid", mListDataList.get(position - 3).getObjectId());
+//                        intent.putExtra("oid", mListDataList.get(position - 3).getObjectId());
                         mContext.startActivity(intent);
                     }
                 });
@@ -143,7 +142,7 @@ public class MainFrag1RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
 //                x.image().bind(((ImageView) ((((ViewHolderHead) holder).linearLayoutList).get(i).getChildAt(0))), Const.SERVER_URL + mHeadDataList.get(i).getIcon(), imageOptions);
 
 //                Picasso加载图片
-                Picasso.with(mContext).load(mHeadDataList.get(i).getIcon().getFileUrl()).into((ImageView) ((ViewHolderHead) holder).linearLayoutList.get(i).getChildAt(0));
+//                Picasso.with(mContext).load(mHeadDataList.get(i).getIcon().getFileUrl()).into((ImageView) ((ViewHolderHead) holder).linearLayoutList.get(i).getChildAt(0));
                 ((TextView) ((ViewHolderHead) holder).linearLayoutList.get(i).getChildAt(1)).setText(mHeadDataList.get(i).getName());
             }
         } else if (holder instanceof ViewHolderPict) {

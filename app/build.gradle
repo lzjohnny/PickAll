@@ -1,26 +1,31 @@
-apply plugin: 'com.android.application'
+project.apply(plugin: 'com.android.application')
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '25.0.2'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "cn.xidianedu.pickall"
-        minSdkVersion 21
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        manifestPlaceholders rootProject.ext.manifestPlaceholders
     }
     buildTypes {
-        debug {
-
-        }
-
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+greendao {
+    schemaVersion 1
+    daoPackage 'com.greendao.gen'
+    targetGenDir 'src/main/java'
 }
 
 repositories {
@@ -31,15 +36,29 @@ repositories {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:design:24.2.1'
-    compile 'com.android.support:cardview-v7:24.2.1'
-    compile 'com.android.support:support-v13:24.2.1'
-//    compile 'org.xutils:xutils:3.3.40'
-    compile 'com.github.hackware1993:MagicIndicator:1.5.0' // viewpager小圆点指示器
-    compile 'com.jude:rollviewpager:1.4.6' // 图片轮播库
-//    compile files('libs/init-1.5-sources.jar')
-    compile 'cn.bmob.android:bmob-sdk:3.5.0' //bmob云后端sdk
-    compile 'org.litepal.android:core:1.5.1' // SQLit数据库操作库
-    compile 'com.squareup.picasso:picasso:2.5.2' // 图片加载库
-    compile files('libs/Jama-1.0.3.jar') // 矩阵操作库
+    // android库不可以随意升级版本！需要和根目录下build.gradle中ext的版本号一致！
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
+    compile 'com.android.support:support-v13:26.1.0'
+    testCompile 'junit:junit:4.12'
+
+    // viewpager小圆点指示器
+    compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+    // 图片轮播库
+    compile 'com.jude:rollviewpager:1.4.6'
+    // 矩阵操作库
+    compile files('libs/Jama-1.0.3.jar')
+
+    compile 'org.greenrobot:eventbus:3.1.1'
+    compile 'org.greenrobot:greendao:3.2.2'
+
+    // APP module中暂时有用到GSON，等网络相关完全抽到baselib后再去掉GSON
+    compile 'com.google.code.gson:gson:2.8.2'
+
+    // 图片加载库
+    // compile 'com.squareup.picasso:picasso:2.5.2'
+    // SQLit数据库操作库
+    // compile 'org.litepal.android:core:1.5.1'
+    //bmob云后端sdk
+    // compile 'cn.bmob.android:bmob-sdk:3.5.0'
 }

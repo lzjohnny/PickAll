@@ -31,7 +31,7 @@ import cn.xidianedu.pickall.bean.UserInfo;
 import cn.xidianedu.pickall.fragment.ImageFragment;
 import cn.xidianedu.pickall.http.AsyncHttpClient;
 import cn.xidianedu.pickall.http.TextResponseHandler;
-import cn.xidianedu.pickall.utils.DensityUtil;
+import cn.xidianedu.pickall.utils.CommonUtil;
 
 /**
  * onCreate阶段从网络加载用户信息（昵称，介绍等）
@@ -212,8 +212,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         recyclerView.setAdapter(adapter);
 
         DividerItemDecoration divider = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
-        divider.setmDividerLeftMargin(DensityUtil.dip2px(this, 20));
-        divider.setmDividerRightMargin(DensityUtil.dip2px(this, 20));
+        divider.setmDividerLeftMargin(CommonUtil.dip2px(20));
+        divider.setmDividerRightMargin(CommonUtil.dip2px(20));
         recyclerView.addItemDecoration(divider);
         adapter.setOnItemClickListener(new UserInfoRecyclerViewAdapter.OnRecyclerViewItemClickListener() {
             @Override

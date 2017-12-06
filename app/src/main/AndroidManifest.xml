@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
     <application
-        android:name="cn.xidianedu.pickall.MyApplication"
+        android:name="cn.xidianedu.pickall.PickAllApplication"
         android:allowBackup="true"
         android:icon="@mipmap/icon"
         android:label="@string/app_name"
@@ -22,12 +22,11 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="LHCMCreOtgvOUO7ufPeLuCCfT2mqkKr3" />
+            android:value="${BAIDU_LBS_API_KEY}" />
 
         <activity android:name="cn.xidianedu.pickall.activity.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

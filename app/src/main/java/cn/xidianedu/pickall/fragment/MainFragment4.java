@@ -20,7 +20,7 @@ import cn.xidianedu.pickall.activity.SettingActivity;
 import cn.xidianedu.pickall.activity.UserInfoActivity;
 import cn.xidianedu.pickall.adapter.DividerItemDecoration;
 import cn.xidianedu.pickall.adapter.Fragment3ChoiceRecyclerViewAdapter;
-import cn.xidianedu.pickall.utils.DensityUtil;
+import cn.xidianedu.pickall.utils.CommonUtil;
 
 /**
  * Created by ShiningForever on 2016/8/3.
@@ -55,7 +55,7 @@ public class MainFragment4 extends PreferenceFragment implements View.OnClickLis
         DividerItemDecoration divider = new DividerItemDecoration(context, LinearLayoutManager.VERTICAL);
         // 分割线左侧距屏幕边缘的边距
         // 55dp为左侧图片的大小
-        divider.setmDividerLeftMargin(DensityUtil.dip2px(context, 55));
+        divider.setmDividerLeftMargin(CommonUtil.dip2px(55));
 
         RecyclerView rvChoice = (RecyclerView) view.findViewById(R.id.rv_choice_fragment_3);
         rvChoice.setLayoutManager(new LinearLayoutManager(context));

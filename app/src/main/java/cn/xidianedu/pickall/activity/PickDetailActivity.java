@@ -16,12 +16,6 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import cn.bmob.v3.AsyncCustomEndpoints;
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.CloudCodeListener;
-import cn.bmob.v3.listener.QueryListener;
 import cn.xidianedu.pickall.R;
 import cn.xidianedu.pickall.bean.PickParkBean;
 
@@ -57,20 +51,19 @@ public class PickDetailActivity extends AppCompatActivity implements RatingBar.O
 
         Intent intent = getIntent();
         oid = intent.getStringExtra("oid");
-        Log.d("--------oid------", oid);
 
-        BmobQuery<PickParkBean> query = new BmobQuery<>();
-        query.getObject(oid, new QueryListener<PickParkBean>() {
-            @Override
-            public void done(PickParkBean pickParkBean, BmobException e) {
-                if (e == null) {
-                    initView(pickParkBean);
-                } else {
-                    Toast.makeText(PickDetailActivity.this, "加载失败", Toast.LENGTH_SHORT).show();
-                    Log.d("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
-                }
-            }
-        });
+//        BmobQuery<PickParkBean> query = new BmobQuery<>();
+//        query.getObject(oid, new QueryListener<PickParkBean>() {
+//            @Override
+//            public void done(PickParkBean pickParkBean, BmobException e) {
+//                if (e == null) {
+//                    initView(pickParkBean);
+//                } else {
+//                    Toast.makeText(PickDetailActivity.this, "加载失败", Toast.LENGTH_SHORT).show();
+//                    Log.d("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
+//                }
+//            }
+//        });
 
         toolbar = (Toolbar) findViewById(R.id.pick_detail_toolbar);
         setSupportActionBar(toolbar);
@@ -105,19 +98,19 @@ public class PickDetailActivity extends AppCompatActivity implements RatingBar.O
                 Map<String, String> ratingMap = new HashMap<>();
                 ratingMap.put("oid", oid);
                 ratingMap.put("score", String.valueOf(ratingNum));
-                AsyncCustomEndpoints ace = new AsyncCustomEndpoints();
-                ace.callEndpoint("rate", new JSONObject(ratingMap), new CloudCodeListener() {
-                    @Override
-                    public void done(Object o, BmobException e) {
-                        if (e == null) {
-                            Toast.makeText(PickDetailActivity.this, "评分已更新", Toast.LENGTH_SHORT).show();
-                            finish();
-                        } else {
-                            Toast.makeText(PickDetailActivity.this, "更新评分失败", Toast.LENGTH_SHORT).show();
-                            Log.e("YunMethodRate", e.getMessage());
-                        }
-                    }
-                });
+//                AsyncCustomEndpoints ace = new AsyncCustomEndpoints();
+//                ace.callEndpoint("rate", new JSONObject(ratingMap), new CloudCodeListener() {
+//                    @Override
+//                    public void done(Object o, BmobException e) {
+//                        if (e == null) {
+//                            Toast.makeText(PickDetailActivity.this, "评分已更新", Toast.LENGTH_SHORT).show();
+//                            finish();
+//                        } else {
+//                            Toast.makeText(PickDetailActivity.this, "更新评分失败", Toast.LENGTH_SHORT).show();
+//                            Log.e("YunMethodRate", e.getMessage());
+//                        }
+//                    }
+//                });
                 break;
         }
         return true;

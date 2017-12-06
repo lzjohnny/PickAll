@@ -17,11 +17,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.List;
-
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.FindListener;
-import cn.bmob.v3.listener.SaveListener;
 import cn.xidianedu.pickall.R;
 import cn.xidianedu.pickall.bean.User;
 
@@ -166,76 +161,76 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void login(String username, final String password) {
         //登录发送POST请求
-        BmobQuery<User> query = new BmobQuery<>();
-        query.addWhereEqualTo("username", username);
-        query.setLimit(1);
-        query.findObjects(new FindListener<User>() {
-            @Override
-            public void done(List<User> list, BmobException e) {
-                if (e == null) {
-                    if (list.size() == 0) {
-                        Toast.makeText(LoginActivity.this, "用户名不存在", Toast.LENGTH_SHORT).show();
-                    } else {
-                        if (list.get(0).getPassword().equals(password)) {
-                            //用户名密码匹配登陆成功
-                            SharedPreferences.Editor editor = getSharedPreferences("login_info", MODE_PRIVATE).edit();
-                            editor.putBoolean("is_login", true);
-                            editor.apply();
-                            Intent intent = new Intent(LoginActivity.this, UserInfoActivity.class);
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            Toast.makeText(LoginActivity.this, "用户名与密码不匹配", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                } else {
-                    Toast.makeText(LoginActivity.this, "服务繁忙，请稍候再试", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        BmobQuery<User> query = new BmobQuery<>();
+//        query.addWhereEqualTo("username", username);
+//        query.setLimit(1);
+//        query.findObjects(new FindListener<User>() {
+//            @Override
+//            public void done(List<User> list, BmobException e) {
+//                if (e == null) {
+//                    if (list.size() == 0) {
+//                        Toast.makeText(LoginActivity.this, "用户名不存在", Toast.LENGTH_SHORT).show();
+//                    } else {
+//                        if (list.get(0).getPassword().equals(password)) {
+//                            //用户名密码匹配登陆成功
+//                            SharedPreferences.Editor editor = getSharedPreferences("login_info", MODE_PRIVATE).edit();
+//                            editor.putBoolean("is_login", true);
+//                            editor.apply();
+//                            Intent intent = new Intent(LoginActivity.this, UserInfoActivity.class);
+//                            startActivity(intent);
+//                            finish();
+//                        } else {
+//                            Toast.makeText(LoginActivity.this, "用户名与密码不匹配", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                } else {
+//                    Toast.makeText(LoginActivity.this, "服务繁忙，请稍候再试", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
     }
 
     private void register(final String registerUsername, final String registerPassword) {
         //检查用户名是否存在
-        BmobQuery<User> query = new BmobQuery<>();
-        query.addWhereEqualTo("username", registerUsername);
-        query.setLimit(1);
-        query.findObjects(new FindListener<User>() {
-            @Override
-            public void done(List<User> list, BmobException e) {
-                if (e == null) {
-                    //用户名重复
-                    if (list.size() != 0) {
-                        Toast.makeText(LoginActivity.this, "用户名已存在", Toast.LENGTH_SHORT).show();
-                    } else {
-                        doRegister(registerUsername, registerPassword);
-                    }
-                } else {
-                    Toast.makeText(LoginActivity.this, "服务繁忙，请稍候再试", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        BmobQuery<User> query = new BmobQuery<>();
+//        query.addWhereEqualTo("username", registerUsername);
+//        query.setLimit(1);
+//        query.findObjects(new FindListener<User>() {
+//            @Override
+//            public void done(List<User> list, BmobException e) {
+//                if (e == null) {
+//                    //用户名重复
+//                    if (list.size() != 0) {
+//                        Toast.makeText(LoginActivity.this, "用户名已存在", Toast.LENGTH_SHORT).show();
+//                    } else {
+//                        doRegister(registerUsername, registerPassword);
+//                    }
+//                } else {
+//                    Toast.makeText(LoginActivity.this, "服务繁忙，请稍候再试", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
     }
 
     private void doRegister(String registerUsername, String registerPassword) {
-        User user = new User();
-        user.setUsername(registerUsername);
-        user.setPassword(registerPassword);
-        user.save(new SaveListener<String>() {
-            @Override
-            public void done(String s, BmobException e) {
-                if (e == null) {
-                    Toast.makeText(LoginActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
-                    SharedPreferences.Editor editor = getSharedPreferences("login_info", MODE_PRIVATE).edit();
-                    editor.putBoolean("is_login", true);
-                    editor.apply();
-                    finish();
-                } else {
-                    Toast.makeText(LoginActivity.this, "服务繁忙，请稍候再试", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+//        User user = new User();
+//        user.setUsername(registerUsername);
+//        user.setPassword(registerPassword);
+//        user.save(new SaveListener<String>() {
+//            @Override
+//            public void done(String s, BmobException e) {
+//                if (e == null) {
+//                    Toast.makeText(LoginActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+//                    SharedPreferences.Editor editor = getSharedPreferences("login_info", MODE_PRIVATE).edit();
+//                    editor.putBoolean("is_login", true);
+//                    editor.apply();
+//                    finish();
+//                } else {
+//                    Toast.makeText(LoginActivity.this, "服务繁忙，请稍候再试", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
     }
 
     //无论点击登录与否都在onStop中保存username和password

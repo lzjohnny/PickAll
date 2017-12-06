@@ -12,10 +12,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.List;
-
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.FindListener;
 import cn.xidianedu.pickall.R;
 import cn.xidianedu.pickall.adapter.DividerItemDecoration;
 import cn.xidianedu.pickall.adapter.PickListActivityAdapter;
@@ -47,20 +43,20 @@ public class PickListActivity extends AppCompatActivity {
         final PickListActivityAdapter adapter = new PickListActivityAdapter(this);
         recyclerView.setAdapter(adapter);
 
-        BmobQuery<PickParkBean> query = new BmobQuery<>();
-        query.addWhereEqualTo("category", title);
-        query.findObjects(new FindListener<PickParkBean>() {
-            @Override
-            public void done(List<PickParkBean> list, BmobException e) {
-                if (e == null) {
-                    Log.d("----------", list.toString());
-                    adapter.addSrcAndNotify(list);
-                } else {
-                    Toast.makeText(PickListActivity.this, "获取数据失败", Toast.LENGTH_SHORT).show();
-                    Log.i("Bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
-                }
-            }
-        });
+//        BmobQuery<PickParkBean> query = new BmobQuery<>();
+//        query.addWhereEqualTo("category", title);
+//        query.findObjects(new FindListener<PickParkBean>() {
+//            @Override
+//            public void done(List<PickParkBean> list, BmobException e) {
+//                if (e == null) {
+//                    Log.d("----------", list.toString());
+//                    adapter.addSrcAndNotify(list);
+//                } else {
+//                    Toast.makeText(PickListActivity.this, "获取数据失败", Toast.LENGTH_SHORT).show();
+//                    Log.i("Bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
+//                }
+//            }
+//        });
     }
 
     @Override
